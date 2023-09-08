@@ -31,6 +31,6 @@ Download signal.dat and store the file in the same directory as your project Deb
 
 Write a program to read the data in the file signal.dat into array x[n] and compute the filtered output signal y[n], for N = 10 and N = 100.  Using a plotting application you prefer, based on information you learned from the Canvas Discussion exercise, plot the input signal (raw data) x[n] in red, and the filtered output signal y[n], for N = 10 and N = 100, in blue and green, respectively.  Your plot should resemble that shown in the figure below.  As you can see, a moving average filter averages or smooths the raw (input) data.
 
-[moving_window.png]([url](https://drive.google.com/file/d/1dMUQx7FqQERbeEDdEjVfpkdMDe7yF4ua/view?usp=sharing))
+Image: https://drive.google.com/file/d/1dMUQx7FqQERbeEDdEjVfpkdMDe7yF4ua/view?usp=sharing
 
 Demonstrate your program and show your plot to your laboratory section TA to receive credit for this assignment.
