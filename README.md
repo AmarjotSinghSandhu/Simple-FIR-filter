@@ -1,34 +1,38 @@
-# Simple-FIR-filter
+# Discrete-Time Moving Average Filter Project
 
-Prompt:
-In this exercise you will develop a program that implements a discrete-time moving average filter, which is a simple discrete-time finite impulse response (FIR) filter, an important filter used in signal processing.  In a discrete FIR filter, given an input signal x[n] of data stored in an array of doubles, the idea is to compute an output signal y[n], where
+This project implements a discrete-time moving average filter, a simple Finite Impulse Response (FIR) filter used in signal processing.
 
-  y[n] = b(0)*x[n] + b(1)*x[n-1] + ... + b(N)*x[n-N] = (i=0) Σ (N) b(i)*x[n-i]. (That is the sum from 'i=0' to 'N' of 'b(i)*x[n-i]')
+## Overview
 
-N is called the filter order.  From the definition of y[n] above, an Nth-order filter is the sum of N+1 terms.  The bi terms are weights.  For a moving average filter, set for all i.
+The C program provided reads data from the `signal.dat` file and computes two filtered output signals, `y10` and `y100`, for filter orders 10 and 100, respectively. These signals are derived using a moving average filter applied to the input signal `x[n]`.
 
-Download signal.dat and store the file in the same directory as your project Debug directory where your compiled executable resides.  Here is example code that opens and reads the contents of the signal.dat data file, line by line:
+## Program Implementation
 
-  #include <stdio.h>
-  
-  int main(void)
-  {
-       FILE *fPtr;
-       // fopen opens file; exits program if file cannot be opened
-       if ((fPtr = fopen("signal.dat", "r")) == NULL) {
-             puts("File could not be opened");
-       }
-       else {
-             double sample;
-             // while not end of file
-             while (!feof(fPtr)) {
-                  fscanf(fPtr, "%lf", &sample);
-                  printf("%7.3f\n", sample);
-             }
-             fclose(fPtr); // fclose closes the file
-       }
-  }
+### Running the Program
 
-Write a program to read the data in the file signal.dat into array x[n] and compute the filtered output signal y[n], for N = 10 and N = 100.  Using a plotting application you prefer, based on information you learned from the Canvas Discussion exercise, plot the input signal (raw data) x[n] in red, and the filtered output signal y[n], for N = 10 and N = 100, in blue and green, respectively.  
+1. **Download the Data File**: Ensure the `signal.dat` file is available in the specified path or update the file path in the code if needed.
+2. **Compile the Program**: Use a C compiler (e.g., GCC) to compile the program.
+    ```bash
+    gcc -o FIRFilter FIRFilter.c
+    ```
+3. **Execute the Program**: Run the compiled program.
+    ```bash
+    ./FIRFilter
+    ```
 
-Demonstrate your program and show your plot to your laboratory section TA to receive credit for this assignment.
+## Filtering Process
+
+The program computes the filtered output signals `y10` and `y100` based on the moving average filter principle. It reads data from the file and performs the following steps:
+
+1. **File Reading**: Reads data from `signal.dat` into an array `x[n]`.
+2. **Filtering Procedure**:
+    - **y10 Calculation**: Computes `y10` by averaging the previous 10 samples of `x[n]`.
+    - **y100 Calculation**: Computes `y100` by averaging the previous 100 samples of `x[n]`.
+3. **Output Display**: The program prints the computed `y100` values for demonstration purposes.
+
+## Note
+
+- Ensure the data file (`signal.dat`) is in the correct path or modify the file path in the code accordingly.
+- Adjustments to the filtering logic or further visualization using plotting applications can enhance the project.
+
+Feel free to modify the program or add more details as needed for your project's documentation.
