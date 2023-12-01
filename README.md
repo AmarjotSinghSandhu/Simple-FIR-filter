@@ -2,6 +2,8 @@
 
 This project implements a discrete-time moving average filter, a simple Finite Impulse Response (FIR) filter used in signal processing.
 
+![Signal Plot](./FIRPrev/Graph.png)
+
 ## Overview
 
 The C program provided reads data from the `signal.dat` file and computes two filtered output signals, `y10` and `y100`, for filter orders 10 and 100, respectively. These signals are derived using a moving average filter applied to the input signal `x[n]`.
